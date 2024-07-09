@@ -2478,6 +2478,15 @@ section,
 .blog-details .meta-bottom .share i {
   padding-left: 5px;
 }
+#blog-posts article .post-img img{
+  transition: all 0.5s ;
+  opacity: 0.7;
+}
+#blog-posts article:hover .post-img img{
+  transform: scale(105%);
+  transition: all 0.5s ;
+  opacity: 1;
+}
 
 /*--------------------------------------------------------------
 # Blog Author Section
@@ -2499,7 +2508,7 @@ section,
 .blog-author h4 {
   font-weight: 600;
   font-size: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0px; 
   padding: 0;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
