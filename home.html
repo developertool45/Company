@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="testing-button ">
+      <h2>Set Interval practice with these two btns</h2>
+    <button class="btn btn-primary" id="start">Start</button>
+    <button class="btn btn-danger" id="stop">Stop</button>
+    </div>
+  </div>
+</div>
+    
+</body>
+<script>
+    
+
+// for testing
+
+let startbtn = document.querySelector("#start")
+let stopbtn = document.querySelector("#stop")
+
+function randomColor(){
+    let hex = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++){
+    color += hex[Math.floor(Math.random() * 16)] 
+    }
+   return color;
+}
+
+let colorSet;
+const startChangingColor = function () {
+     if(!colorSet){
+      colorSet = setInterval(changeBgColor, 1000);
+     }
+
+     function changeBgColor(){     
+        document.body.style.backgroundColor = randomColor();
+     }
+}
+
+const stopChangingColor = function() {
+    clearInterval(colorSet);
+    colorSet = null;
+}
+
+startbtn.addEventListener('click',startChangingColor )
+stopbtn.addEventListener('click',stopChangingColor )
+
+window.addEventListener("keydown", function(e){
+    console.log(e.keyCode);
+})
+</script>
+</html>
